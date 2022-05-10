@@ -1,0 +1,98 @@
+/* eslint-disable prettier/prettier */
+export default [
+  {
+    id: '1',
+    title: 'Athena',
+    category: 'Short-Dress',
+    description:
+      'Call out the diva in you selecting this fabulous wrap dress. Featuring a textured finish, tulip hemline, and puff sleeves, it will lend a mod look while accentuating your shape. ',
+    image: require('./product1_main.jpg'),
+    images: [
+      require('./product1_1.jpg'),
+      require('./product1_2.jpg'),
+      require('./product1_3.jpg'),
+    ],
+    colors: ['Black', 'Green', 'Red'],
+    size: ['XS', 'S', 'M', 'L', 'XL'],
+    avgRating: 4.8,
+    ratings: 10,
+    price: 99.98,
+    oldPrice: 120.06,
+  },
+  {
+    id: '2',
+    title: 'SASSAFRAS',
+    category: 'Short-Dress',
+    description:
+      'Black solid bodycon dress Round neck Sleeveless, no sleeves Mini length in straight hem',
+    image: require('./product2_main.jpg'),
+    images: [
+      require('./product2_1.jpg'),
+      require('./product2_2.jpg'),
+      require('./product2_3.jpg'),
+    ],
+    colors: ['Black', 'Green'],
+    size: ['S', 'M', 'L', 'XL'],
+    avgRating: 3.2,
+    ratings: 20,
+    price: 52,
+    oldPrice: 120.06,
+  },
+  {
+    id: '3',
+    title: 'H&M',
+    category: 'Short-Dress',
+    description:
+      'Sea green solid blazer dress V-neck Long, bishop sleeve Tie-up detail Mini length in straight hem Crepe fabric',
+    image: require('./product3_main.jpg'),
+    images: [
+      require('./product3_1.jpg'),
+      require('./product3_2.jpg'),
+      require('./product3_3.jpg'),
+    ],
+    colors: ['Black', 'Green', 'Red'],
+    size: ['XS', 'S', 'XL'],
+    avgRating: 5,
+    ratings: 2989,
+    price: 120,
+    oldPrice: 120.06,
+  },
+  {
+    id: '4',
+    title: 'Miss Chase',
+    category: 'Short-Dress',
+    description:
+      'Turquoise blue polka dot print a-line dress Shoulder straps Sleeveless, no sleeves Tie-up detail Mini length in straight hem Crepe fabric Comes with a belt',
+    image: require('./product4_main.jpg'),
+    images: [
+      require('./product4_1.jpg'),
+      require('./product4_2.jpg'),
+      require('./product4_3.jpg'),
+    ],
+    colors: ['Black', 'Green', 'Red'],
+    size: ['XS', 'S', 'M', 'L', 'XL'],
+    avgRating: 5,
+    ratings: 12,
+    price: 25.22,
+    oldPrice: 120.06,
+  },
+  {
+    id: '5',
+    title: 'DODO & MOA',
+    category: 'Short-Dress',
+    description:
+      'Black and beige animal print woven mini shirt dress, has a shirt collar, long sleeves, button closure, curved  hem Comes with a fabric belt',
+    image: require('./product5_main.jpg'),
+    images: [
+      require('./product5_1.jpg'),
+      require('./product5_2.jpg'),
+      require('./product5_3.jpg'),
+    ],
+    colors: ['Black', 'Green', 'Red'],
+    size: ['XS', 'S', 'M', 'L', 'XL'],
+    avgRating: 2.3,
+    ratings: 10,
+    price: 55.98,
+    oldPrice: 120.06,
+  },
+];
