@@ -19,35 +19,51 @@ const HomeScreen = props => {
   const onProductItemPressed = () => {
     console.warn('onProductItemPressed');
   };
+  
+  function Product () {
+    const {id} = useParams()
+    const url = 'http://localhost/api/getProdList'
+    const [product, setProduct] = useState(null) 
+
+    let content = null 
+
+    useEffect(() =>{
+      axios.get(url)
+      .then(response => {
+        setProduct(response.data)
+      })
+    },
+    {url})
+  }
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerContainer}>
         <Image source={imageBG} style={styles.bgImage} />
-        <Text style={styles.title}>Street clothes</Text>
+        <Text style={styles.title}>20% OFF</Text>
       </View>
       <View style={styles.root}>
         <View style={styles.subtitleContainer}>
-          <Text style={styles.subtitle}>New</Text>
+          <Text style={styles.subtitle}>Шsинэ бараа</Text>
           <Text style={styles.subtitleText} onPress={onViewAllPressed}>
-            View all
+            Бүгдийг харах
           </Text>
         </View>
         <View style={styles.textContainer}>
-          <Text style={styles.text}>You’ve never seen it before!</Text>
+          <Text style={styles.text}></Text>
         </View>
         <FlatList
-          data={DATA}
+          data={product}
           renderItem={({item}) => (
             <Pressable style={styles.productContainer}>
               <View style={styles.productImage}>
                 <Image
-                  source={item.image}
+                  source={product.image_name}
                   style={styles.image}
                   resizeMode="cover"
                 />
                 <View style={styles.newContainer}>
-                  <Text style={styles.saleText}>NEW</Text>
+                  <Text style={styles.saleText}>Шинэ</Text>
                 </View>
                 <View style={styles.favIconContainer}>
                   <FavoriteButton onPress={onFavButtonPressed} />
@@ -58,7 +74,7 @@ const HomeScreen = props => {
                   <FontAwesome
                     key={`${item.id}-${i}`}
                     style={styles.star}
-                    name={i < Math.floor(item.avgRating) ? 'star' : 'star-o'}
+                    name={i < Math.floor(product.discount) ? 'star' : 'star-o'}
                     size={13}
                     color={'#FFBA49'}
                   />
