@@ -19,21 +19,23 @@ const HomeScreen = props => {
   const onProductItemPressed = () => {
     console.warn('onProductItemPressed');
   };
-  
-  function Product () {
-    const {id} = useParams()
-    const url = 'http://localhost/api/getProdList'
-    const [product, setProduct] = useState(null) 
 
-    let content = null 
+  function Product() {
+    const {id} = useParams();
+    const url = 'http://localhost/api/getProdList';
+    const [product, setProduct] = useState(null);
 
-    useEffect(() =>{
-      axios.get(url)
-      .then(response => {
-        setProduct(response.data)
-      })
-    },
-    {url})
+    useEffect(() => {
+      axios
+        .get(url)
+        .then(response => {
+          console.log(response.data);
+          setProduct(response.data);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }, [id]);
   }
 
   return (
@@ -52,7 +54,7 @@ const HomeScreen = props => {
         <View style={styles.textContainer}>
           <Text style={styles.text}></Text>
         </View>
-        <FlatList
+        {/* <FlatList
           data={product}
           renderItem={({item}) => (
             <Pressable style={styles.productContainer}>
@@ -91,7 +93,7 @@ const HomeScreen = props => {
           )}
           horizontal
           showsHorizontalScrollIndicator={false}
-        />
+        /> */}
       </View>
     </ScrollView>
   );
